@@ -84,6 +84,7 @@ function BillingDashboard() {
               <label>In stock Inventory Quantity</label>
               <p>700</p>
             </div>
+            
             <div className="statistic">
               <label>Medicine out of stock</label>
               <p>5</p>
