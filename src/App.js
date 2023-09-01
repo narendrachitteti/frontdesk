@@ -1,14 +1,16 @@
 import React from 'react';
-
 import './App.css';
+import PatientBilling from './FrontDesk/PatientBilling';
+import Barcode from './FrontDesk/PatientDetails';
+import PatientDetails from './FrontDesk/PatientDetails';
 
-import BillingDashboard from './FrontDesk/BillingDashboard';
-import AllBills from './FrontDesk/AllBills';
+import PurchaseOrder from './PurchaseOrders';
+import PharmacyBilling from './PharmacyBilling';
 
 function App() {
   return (
     <div >
-    <AllBills/>
+    <PharmacyBilling/>
     </div>
   );
 }

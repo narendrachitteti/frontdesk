@@ -3,17 +3,21 @@
     text-align: center;
     padding: 20px;
   }
-  .date-container,.date2 {
-    display: flex;
-    align-items: center;
+  .date-container,.date2, .date-container12 {
+    
     margin-bottom: 20px;
+    margin-right: -250px;
   }
   .date-container button {
   background-color: #007bff;
   color: white;
   border: none;
   }
-  
+  .date-container12 button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    }
   .date-container label,
   .date-container input {
     margin-right: 10px;

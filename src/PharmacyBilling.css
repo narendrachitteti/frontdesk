@@ -1,0 +1,483 @@
+/* 
+  .Pharma {
+    background-color: #ccc;
+    text-align: center;
+    padding: 20px;
+  }
+  .bill123 button{
+    display: flex-end;
+    color: white;
+    margin-right: 10px;
+    border: none;
+    background-color: #007bff;
+  }
+  .date23 {
+    display: flex;
+  }
+  .button43{
+    border: none;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #007bff;
+  }
+  .card-container22{
+    display: flex;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .form-container {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+  
+  .form-section {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 20%;
+    margin-left: 10px;
+  }
+  
+  
+  .form-section label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-section input,
+  .form-section select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .form-section button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .date-container23 label,
+  .date-container23 input,
+  .date-container23 button {
+    margin: 5px;
+  }
+  .card23 {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .card22{
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .card23 .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    margin-right: 27px;
+  }
+  .card22 .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .card23 .input-group label {
+    margin-bottom: 5px;
+  }
+  
+  .sales-table23 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .sales-table23 th,
+  .sales-table23 td {
+    background-color: #ececec;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+   */
+
+   /* PharmacyBilling.css */
+
+/* 
+.PharmacyBilling {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.date23 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.bill123 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bill123 label {
+  font-weight: bold;
+}
+
+.bill123 input[type="date"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.bill123 button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.bill123 button:hover {
+  background-color: #0056b3;
+}
+
+.card-container22 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card22 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.card22 label {
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card22 input[type="text"],
+.card22 input[type="number"],
+.card22 input[type="email"],
+.card22 select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.card-container23 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card23 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.input-group input[type="text"],
+.input-group select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.button43 {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button43:hover {
+  background-color: #0056b3;
+}
+
+
+.sales-table23 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.sales-table23 th,
+.sales-table23 td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+
+.form-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-section {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.form-section label {
+  font-weight: bold;
+}
+
+.form-section input[type="text"],
+.form-section input[type="number"],
+.form-section input[type="email"],
+.form-section select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-section button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #0056b3;
+} */
+
+.PharmacyBilling {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PharmacyBilling h3 {
+  text-align: left;
+  font-size: 24px;
+}
+
+.bill-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.bill-details {
+  flex-grow: 1;
+}
+
+.bill-details label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bill-details input[type="date"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.bill-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.bill-buttons button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bill-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.patient-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.card label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card input[type="text"],
+.card input[type="number"],
+.card input[type="email"],
+.card select {
+  width: 89%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Main Form */
+.main-form {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-form {
+  flex-grow: 1;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sales Table */
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.sales-table th,
+.sales-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Additional Form */
+.additional-form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.additional-form-section {
+  width: 15%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.additional-form-section label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.additional-form-section input[type="text"],
+.additional-form-section input[type="number"],
+.additional-form-section input[type="email"],
+.additional-form-section select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.additional-form-section button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.additional-form-section button:hover {
+  background-color: #0056b3;
+}

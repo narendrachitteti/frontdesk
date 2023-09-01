@@ -1,18 +1,20 @@
 
-.dashboard-container {
+.dashboard-container12 {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.input-table-container {
+.input-table-container12 {
   width: 70%;
   padding: 20px;
   border-right: 3px solid #ccc;
   box-sizing: border-box;
   overflow-y: auto;
 }
-
+.input-field12{
+  width: 90%;
+}
 .additional-form {
   border: 1px solid #ccc;
   padding: 20px;
@@ -36,13 +38,16 @@
   overflow-y: auto;
 }
 
-.input-table th,
-.input-table td {
+.input-table12 th,
+.input-table12 td {
   padding: 8px;
   border: 1px solid #ccc;
 }
+.input-table12 th{
+  background-color: #007bff;
+}
 
-.add-button,.pay-button{
+.add-button12,.pay-button{
   background-color: #007bff;
   color: white;
   border-radius: 4px;

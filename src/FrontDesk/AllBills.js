@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './AllBills.css';
+import { BsFilterLeft } from "react-icons/bs";
 
 function AllBills() {
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
+  const [search] = useState('');
   const [totalSales, setTotalSales] = useState(0);
   const [totalBill, setTotalBill] = useState(0);
   const [totalCollect, setTotalCollect] = useState(0);
@@ -31,6 +33,10 @@ function AllBills() {
         <label>To:</label>
         <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} />
         <button onClick={handleGoClick}>Go</button>
+      </div>
+      <div className="date-container12">
+        <input type="text" value={search} placeholder='Search by Name,Order ID' />
+        <button onClick={handleGoClick}>Search</button>
       </div>
       <hr/>
       <div className="card-container">
@@ -65,7 +71,6 @@ function AllBills() {
       </div>
       <div className="card-container2">
         <div className="card2">
-          <h4 className="card-heading">Latest Sales</h4>
           <div className="card-content">
             
             <div className="sales-pagination">
@@ -75,12 +80,12 @@ function AllBills() {
             <table className="sales-table">
               <thead>
                 <tr>
-                  <th>Order Id</th>
-                  <th>Name</th>
-                  <th>Time</th>
-                  <th>Total Amount</th>
-                  <th>Paid Amount</th>
-                  <th>Balance</th>
+                  <th>Order Id&nbsp;&nbsp;&nbsp;<BsFilterLeft/></th>
+                  <th>Name&nbsp;&nbsp;&nbsp;<BsFilterLeft/></th>
+                  <th>Time&nbsp;&nbsp;&nbsp;<BsFilterLeft/></th>
+                  <th>Total Amount&nbsp;&nbsp;&nbsp;<BsFilterLeft/></th>
+                  <th>Paid Amount&nbsp;&nbsp;&nbsp;<BsFilterLeft/></th>
+                  <th>Balance&nbsp;&nbsp;&nbsp;<BsFilterLeft/></th>
                   <th>Collection</th>
                   <th>Print</th>
                   <th>Return</th>

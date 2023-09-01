@@ -1,14 +1,15 @@
+
 import React, { useState } from 'react';
-import './PatientDashboard.css';
+import './PatientBilling.css';
 import { AiOutlineDelete } from "react-icons/ai";
 import { BsPrinter } from "react-icons/bs";
-import { HiOutlineMail } from "react-icons/hi";
+import { TfiEmail } from "react-icons/tfi";
+import axios from 'axios';
 
-const PatientDashboard = () => {
+const PatientBilling = () => {
   const [selectedType, setSelectedType] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
   const [discount, setDiscount] = useState('');
-
   const [showAdditionalForm, setShowAdditionalForm] = useState(false);
   const [selectedDoctor, setSelectedDoctor] = useState('');
   const [appointmentDate, setAppointmentDate] = useState('');
@@ -54,6 +55,31 @@ const PatientDashboard = () => {
       setInputError(true);
     }
   };
+  const handleCreateBill = async () => {
+    try {
+      const response = await axios.post('http://localhost:3001/PatientBill', {
+        items: addedItems, 
+        doctor: selectedDoctor,
+        date: appointmentDate,
+        duration: selectedDuration,
+        hour: selectedHour,
+        minute: selectedMinute,
+        timeOfDay: selectedTimeOfDay,
+        totalAmount: totalAmount,
+        paymentMode: selectedPaymentMode,
+        email: email,
+      });
+
+      if (response.status === 200) {
+        window.alert('Data posted successfully!');
+      } else {
+        
+        window.alert('Data posting failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting billing data:', error);
+    }
+  };
 
   const handleDeleteClick = (index) => {
     const updatedItems = addedItems.filter((_, i) => i !== index);
@@ -82,9 +108,11 @@ const PatientDashboard = () => {
     selectedDoctor && appointmentDate && selectedDuration && selectedHour && selectedMinute;
 
   return (
-    <div className="dashboard-container">
-      <div className="input-table-container">
-        <table className="input-table">
+    <>
+  
+    <div className="dashboard-container12">
+      <div className="input-table-container12">
+        <table className="input-table12">
           <thead>
             <tr>
               <th>Service Name</th>
@@ -108,8 +136,8 @@ const PatientDashboard = () => {
             ))}
             <tr>
               <td>
-                <select className="input-field" value={selectedType} onChange={handleTypeChange}>
-                  <option value="">Select service</option>
+                <select className="input-field12" value={selectedType} onChange={handleTypeChange}>
+                  <option value="type">Select service</option>
                   <option value="consultation">Consultation</option>
                   <option value="surgery">Surgery</option>
                   <option value="operation">Operation</option>
@@ -117,7 +145,7 @@ const PatientDashboard = () => {
               </td>
               <td>
                 <input
-                  className="input-field"
+                  className="input-field12"
                   type="number"
                   value={unitPrice}
                   onChange={handleUnitPriceChange}
@@ -126,7 +154,7 @@ const PatientDashboard = () => {
               </td>
               <td>
                 <input
-                  className="input-field"
+                  className="input-field12"
                   type="number"
                   value={discount}
                   onChange={handleDiscountChange}
@@ -134,7 +162,7 @@ const PatientDashboard = () => {
                 />
               </td>
               <td>
-                <button onClick={handleAddClick} className="add-button">
+                <button onClick={handleAddClick} className="add-button12">
                   Add
                 </button>
               </td>
@@ -146,7 +174,7 @@ const PatientDashboard = () => {
       {showAdditionalForm && !showBill && (
         <div className="additional-form-border additional-form">
           <div className="input-group">
-            <label className="label-with-border" htmlFor="doctor">Choose Doctor:</label>
+            <label className="label-with-border12" htmlFor="doctor">Choose Doctor:</label>
             <select className="input-field" id="doctor" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
               <option>Select doctor</option>
               <option value="doctor1">Doctor 1</option>
@@ -155,11 +183,11 @@ const PatientDashboard = () => {
             </select>
           </div>
           <div className="input-group">
-            <label className="label-with-border" htmlFor="appointmentDate">Appointment Date:</label>
+            <label className="label-with-border12" htmlFor="appointmentDate">Appointment Date:</label>
             <input className="input-field" type="date" id="appointmentDate" value={appointmentDate} onChange={(e) => setAppointmentDate(e.target.value)} required />
           </div>
           <div className="input-group">
-            <label className="label-with-border" htmlFor="duration">Duration:</label>
+            <label className="label-with-border12" htmlFor="duration">Duration:</label>
             <select className="input-field" id="duration" value={selectedDuration} onChange={(e) => setSelectedDuration(e.target.value)}>
               <option>Select duration</option>
               <option value="15">15 minutes</option>
@@ -169,7 +197,7 @@ const PatientDashboard = () => {
             </select>
           </div>
           <div className="input-group">
-            <label className="label-with-border" htmlFor="appointmentTime">Appointment Time:</label>
+            <label className="label-with-border12" htmlFor="appointmentTime">Appointment Time:</label>
             <div className="time-inputs">
               <select className="time-dropdown" value={selectedHour} onChange={(e) => setSelectedHour(e.target.value)}>
                 <option value="">Hour</option>
@@ -206,9 +234,9 @@ const PatientDashboard = () => {
       )}
       {!showAdditionalForm && addedItems.length > 0 && !showBill &&(
         <div className="total-section">
-          <label className="label-with-border">Consultations</label>
+          <label className="label-with-border12">Consultations</label>
           <span className="total-value">&nbsp;&nbsp;₹{totalAmount.toFixed(2)}</span><br/><hr/>
-          <label className="label-with-border">Total:</label>
+          <label className="label-with-border12">Total:</label>
           <span className="total-value">&nbsp;&nbsp;&nbsp;&nbsp;₹{totalAmount.toFixed(2)}</span><br/><br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  className="create-bill-button"
             onClick={() => setShowBill(true)}>Create Bill</button>
@@ -216,13 +244,13 @@ const PatientDashboard = () => {
       )}
       {showBill && (
         <div className="total-section">
-          <label className="label-with-border">Consultations:</label>
+          <label className="label-with-border12">Consultations:</label>
           <span className="total-value">₹{totalAmount.toFixed(2)}</span>
           <hr />
-          <label className="label-with-border">Total Balance:</label>
+          <label className="label-with-border12">Total Balance:</label>
           <span className="total-value">₹{totalAmount.toFixed(2)}</span>
           <div className="input-group">
-            <label className="label-with-border">Mode:</label>
+            <label className="label-with-border12">Mode:</label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select
               className="input-field"
               value={selectedPaymentMode}
@@ -234,7 +262,7 @@ const PatientDashboard = () => {
             </select>
           </div>
           <div className="button-group">
-          &nbsp;&nbsp;&nbsp;<button className="pay-button">
+          &nbsp;&nbsp;&nbsp;<button className="pay-button"onClick={handleCreateBill}>
               Pay ₹{totalAmount.toFixed(2)}
             </button><br/><br/>&nbsp;&nbsp;&nbsp;
             <button className="print-bill-button" onClick={handlePrintClick}>
@@ -249,13 +277,14 @@ const PatientDashboard = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <span className="email-icon"><HiOutlineMail/></span>
+            <span className="email-icon" style={{ color: 'blue',fontSize: '20px'}}>
+  <TfiEmail />
+</span>
           </div>
         </div>
       )}
-    </div>
+    </div></>
   );
 };
 
-export default PatientDashboard;
-
+export default PatientBilling;                                                                        

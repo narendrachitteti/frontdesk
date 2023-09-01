@@ -1,0 +1,9 @@
+.table-dropdown {
+    width: 100%;
+   justify-content: space-between;
+    border-collapse: collapse;   
+}
+.table-dropdown th ,.table-dropdown td {
+     text-align: center;
+     border: 1px solid black;
+}
